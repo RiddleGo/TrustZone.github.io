@@ -1,4 +1,4 @@
-# TrustZone 笔记站点 - 本地静态服务器
+# 任正非讲话实录站点 - 本地静态服务器
 # 用法: .\start-server.ps1 [-Port 8080]
 
 param(
@@ -7,7 +7,7 @@ param(
 
 $SiteRoot = $PSScriptRoot
 Write-Host "========================================" -ForegroundColor Cyan
-Write-Host " TrustZone 笔记站点" -ForegroundColor Cyan
+Write-Host " 任正非讲话实录站点" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "站点目录: $SiteRoot"

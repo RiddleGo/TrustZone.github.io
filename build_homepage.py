@@ -63,7 +63,7 @@ def build_homepage_html(catalog) -> str:
         '<div id="anchor-navigation-ex-navbar">'
         '<i class="fa fa-navicon"></i><ul>'
         '<li><span class="title-icon"></span>'
-        '<a href="#home"><b>1. </b>TrustZone 笔记</a></li>'
+        '<a href="#home"><b>1. </b>任正非讲话实录</a></li>'
         '<li><span class="title-icon"></span>'
         '<a href="#catalog"><b>2. </b>目录索引</a></li>'
         "</ul></div>",
@@ -93,7 +93,7 @@ def build_homepage_html(catalog) -> str:
         "</style>",
         '<h1 id="home"><a name="home" class="anchor-navigation-ex-anchor" '
         'href="#home"><i class="fa fa-link" aria-hidden="true"></i></a>'
-        "TrustZone 笔记</h1>",
+        "任正非讲话实录</h1>",
         '<p class="home-intro">'
         "本站点收录 1994–2019 年任正非讲话、座谈纪要、采访记录等资料，"
         "按年份分类整理。可通过下方年份标签快速跳转，或从左侧导航栏浏览全部内容。</p>",
@@ -150,17 +150,15 @@ def patch_index_html(content_html: str):
 
     html = re.sub(
         r"<title>.*?</title>",
-        "<title>TrustZone 笔记 · 目录索引</title>",
+        "<title>任正非讲话实录 · 目录索引</title>",
         html,
         count=1,
     )
-    html = html.replace(
-        '<meta name="description" content="">',
-        '<meta name="description" content="TrustZone 笔记：1994-2019 年任正非讲话与座谈纪要，按年份分类索引">',
-    )
-    html = html.replace(
-        '<meta name="description" content="TrustZone 笔记：1994-2019 年任正非讲话与座谈纪要，按年份分类索引">',
-        '<meta name="description" content="TrustZone 笔记：1994-2019 年任正非讲话与座谈纪要，按年份分类索引">',
+    html = re.sub(
+        r'<meta name="description" content="[^"]*">',
+        '<meta name="description" content="任正非讲话实录：1994-2019 年任正非讲话、座谈纪要与采访记录，按年份分类索引">',
+        html,
+        count=1,
     )
 
     html = re.sub(
@@ -172,8 +170,8 @@ def patch_index_html(content_html: str):
     )
 
     html = re.sub(
-        r'<a href="\."[^>]*>(Introduction|TrustZone 笔记)</a>',
-        '<a href="." >TrustZone 笔记</a>',
+        r'<a href="\."[^>]*>(Introduction|任正非讲话实录)</a>',
+        '<a href="." >任正非讲话实录</a>',
         html,
         count=1,
     )
